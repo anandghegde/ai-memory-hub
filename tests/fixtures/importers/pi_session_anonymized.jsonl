@@ -1,0 +1,7 @@
+{"type":"session","version":2,"id":"0192f0c0-a000-7000-8000-000000000001","timestamp":"2026-04-12T09:15:00Z","cwd":"/workspace/garden-sensor","title":"Sensor checklist"}
+{"type":"message","id":"a1b2c3d1","parentId":null,"timestamp":"2026-04-12T09:15:30Z","message":{"role":"user","content":[{"type":"text","text":"Draft a setup checklist for a balcony temperature sensor."}]}}
+{"type":"model_change","id":"a1b2c3d2","parentId":"a1b2c3d1","timestamp":"2026-04-12T09:15:31Z","provider":"example-provider","modelId":"example-provider/example-model"}
+{"type":"message","id":"a1b2c3d3","parentId":"a1b2c3d2","timestamp":"2026-04-12T09:16:00Z","message":{"role":"assistant","content":[{"type":"thinking","thinking":"Consider mounting options."},{"type":"text","text":"1. Mount the sensor in shade.\n2. Record a baseline reading."},{"type":"toolCall","name":"read","arguments":{"path":"checklist.md"}}]}}
+{"type":"message","id":"a1b2c3d4","parentId":"a1b2c3d3","timestamp":"2026-04-12T09:17:00Z","message":{"role":"user","content":[{"type":"text","text":"Add a note about battery checks."}]}}
+{"type":"message","id":"a1b2c3d5","parentId":"a1b2c3d3","timestamp":"2026-04-12T09:18:00Z","message":{"role":"user","content":[{"type":"text","text":"Also suggest a shade-friendly mount."}]}}
+{"type":"message","id":"a1b2c3d6","parentId":"a1b2c3d5","timestamp":"2026-04-12T09:19:00Z","message":{"role":"assistant","content":[{"type":"text","text":"Use a bracket under the eave; it keeps direct sun off the housing."},{"type":"text","text":"Recheck the seal after the first rain."}]}}

@@ -3,6 +3,7 @@ from memory.importers.copilot_activity_csv import CopilotActivityCsvImporter
 from memory.importers.deepseek_share_json import DeepSeekShareJsonImporter
 from memory.importers.manual_paste import ManualPasteImporter
 from memory.importers.opencode_session_json import OpenCodeSessionJsonImporter
+from memory.importers.pi_session_jsonl import PiSessionJsonlImporter
 from memory.importers.registry import get_importer, importer_names
 
 __all__ = [
@@ -11,6 +12,7 @@ __all__ = [
     "DeepSeekShareJsonImporter",
     "ManualPasteImporter",
     "OpenCodeSessionJsonImporter",
+    "PiSessionJsonlImporter",
     "get_importer",
     "importer_names",
 ]

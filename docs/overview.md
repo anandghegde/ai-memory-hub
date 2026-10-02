@@ -253,6 +253,7 @@ python -m memory.cli import manual copilot-chat.txt --source vscode-copilot --js
 python -m memory.cli import copilot-activity-csv copilot-activity-history.csv --json
 python -m memory.cli import deepseek-share-json deepseek-share.json --json
 opencode export <SESSION_ID> | python -m memory.cli import opencode-session-json - --json
+python -m memory.cli import pi-session-jsonl "$HOME/.pi/agent/sessions/<project>/<session>.jsonl" --json
 python -m memory.cli search "local-first tools" --top-k 5 --json
 python -m memory.cli retrieve <MEMORY_ID> --json
 python -m memory.cli ask "What did I store about local-first tools?" --top-k 5 --json
@@ -285,6 +286,17 @@ export order, skips internal reasoning, tool-only turns, and synthetic or
 ignored text parts, and records the OpenCode session ID, title, working
 directory, and model as provenance when present. Sanitized exports are also
 accepted; their redacted text remains redacted.
+
+Pi-family session transcripts (Pi at `~/.pi`, Oh My Pi at `~/.omp`, and
+OpenClaw JSONL archives) are session trees: entries link through
+`id`/`parentId`, and rewind or fork operations create branches. The
+`pi-session-jsonl` importer rebuilds the active conversation by walking the
+last message entry back to the root, so abandoned branches are dropped, and
+legacy linear files fall back to physical order. Only user and assistant text
+is kept; system prompts, reasoning, tool traffic, credential pins, and
+compaction bodies are skipped, and a detected variant (`pi`, `oh-my-pi`, or
+`openclaw`) plus the session ID, title, working directory, and model are
+recorded as provenance when present.
 
 Review imported output before retaining sensitive conversations. The repository
 fixtures are synthetic and contain no text copied from personal exports.
