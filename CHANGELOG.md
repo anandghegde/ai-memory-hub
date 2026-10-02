@@ -6,6 +6,9 @@ should describe the supported public behavior for each tagged release.
 
 ## Unreleased
 
+- Added a Pi-family session-JSONL importer (`pi-session-jsonl`) covering Pi,
+  Oh My Pi, and OpenClaw archive transcripts, with variant auto-detection,
+  active-branch ancestry import, and CLI support.
 - Added a native OpenCode session-export JSON importer, including CLI support
   and a live OpenCode/Ollama export, hub insert, and cited query round-trip
   smoke test.
